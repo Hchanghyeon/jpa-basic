@@ -16,10 +16,14 @@
 
     <dependencies>
         <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>6.2.2.Final</version>
-            <type>pom</type>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.6.15.Final</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
