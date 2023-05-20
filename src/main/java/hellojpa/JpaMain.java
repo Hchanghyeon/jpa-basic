@@ -14,7 +14,7 @@ public class JpaMain {
 
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-
+ㅎ
         try {
             List<Member> result = em.createQuery("select m from Member as m ", Member.class).getResultList();
             for(Member member : result){
