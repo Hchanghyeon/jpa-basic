@@ -15,10 +15,19 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
             Member member = new Member();
-            member.setUsername("C");
-            em.persist(member); // persist시 바로 저장됨 -> 영속성 컨텍스트에 넣으려면 무조건 PK가 있어야함
-            tx.commit();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            Member findMember = em.find(Member.class, member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println(findTeam.getName());
+
         } catch (Exception e){
             tx.rollback();
         } finally {
